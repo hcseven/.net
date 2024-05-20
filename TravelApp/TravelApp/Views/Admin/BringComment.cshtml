@@ -1,0 +1,27 @@
+﻿@model TravelApp.Models.Classes.Comment
+@{
+    ViewBag.Title = "BringComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Username)
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UserComment)
+    @Html.TextAreaFor(x => x.UserComment, 8, 1,  new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+
+}
+

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    @model List<TravelApp.Models.Classes.About>
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>About</h3>
+            @foreach(var x in Model)
+            {
+                <img src="@x.ImageUrl" alt=""/>
+                <p>@x.MyAbout</p>
+            }
+        </div>
+    </div>
+</div>
+
